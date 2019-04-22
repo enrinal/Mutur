@@ -58,7 +58,7 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener{
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
-                //Meneteksi Apakah Ada User Yang Sedang Login (Belum Logout)
+                //Mendeteksi Apakah Ada User Yang Sedang Login (Belum Logout)
                 if(user != null){
                     //Jika Ada, User Tidak perlu Login Lagi, dan Langsung Menuju Acivity Yang Dituju
                     startActivity(new Intent(LoginActivity.this, MapsActivity.class));
