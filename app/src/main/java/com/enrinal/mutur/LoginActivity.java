@@ -120,7 +120,7 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener{
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             //Sign In Berhasil
-                            startActivity(new Intent(LoginActivity.this, MapsActivity.class));
+                            startActivity(new Intent(LoginActivity.this, ProfileActivity.class));
                             finish();
                         }else{
                             //Sign In Gagal
@@ -176,5 +176,4 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener{
                 break;
         }
     }
-
 }

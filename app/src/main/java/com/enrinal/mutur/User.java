@@ -1,24 +1,34 @@
 package com.enrinal.mutur;
 
 public class User {
-    public String nama;
-    public String email;
+    private String Name,Email,uid;
 
     public User(){
 
     }
 
-    public User(String nama,String email){
-        this.nama = nama;
-        this.email = email;
+    public String getName() {
+        return Name;
     }
 
     public String getEmail() {
-        return email;
+        return Email;
     }
 
-    public String getNama() {
-        return nama;
+    public String getUid(){
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    public void setEmail(String email) {
+        Email = email;
+    }
+
+    public void setName(String name) {
+        Name = name;
     }
 
 }

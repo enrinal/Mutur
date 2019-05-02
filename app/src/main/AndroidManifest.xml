@@ -43,6 +43,7 @@
             android:label="@string/app_name">
         </activity>
         <activity android:name=".BarcodeReaderActivity"></activity>
+        <activity android:name=".ProfileActivity"></activity>
 
         <activity android:name=".SplashActivity" android:theme="@style/SplashTheme">
         <intent-filter>
