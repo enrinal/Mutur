@@ -33,7 +33,7 @@ public class ProfileActivity extends AppCompatActivity {
         FirebaseUser UID = FirebaseAuth.getInstance().getCurrentUser();
         user.setName(NameHolder);
         user.setEmail(EmailHolder);
-        user.setUid(UID.getUid());
+        user.setUid(UID.getPhoneNumber());
         //String UserRecordIDFromServer = mFirebaseDatabaseReference.push().getKey();
         mDatabase.child("users").child(UID.getUid()).setValue(user);
         Toast.makeText(ProfileActivity.this,"Data Inserted Successfully into Firebase Database", Toast.LENGTH_LONG).show();
