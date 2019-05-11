@@ -28,7 +28,7 @@
         android:layout_marginBottom="65dp"
         android:text="MUTUR"
         android:textColor="@color/colorPrimary"
-        android:textSize="30sp"
+        android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
