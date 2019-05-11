@@ -3,32 +3,35 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteY="25dp">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         app:contentInsetStart="0dp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/navigation_menu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="19.2dp"
-            android:src="@drawable/ic_menu_" />
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/left" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
-            android:text="Simpan"
+            android:layout_marginRight="16dp"
             android:onClick="profile_click"
+            android:text="Simpan"
             android:textColor="#ffffff"
-            android:textSize="17.3sp" />
+            android:textSize="15sp" />
 
     </android.support.v7.widget.Toolbar>
 
@@ -36,35 +39,42 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="153dp"
         android:text="Nama"
-        app:layout_constraintBottom_toTopOf="@+id/nama_user"
-        app:layout_constraintStart_toStartOf="@+id/nama_user" />
+        android:textColor="@color/colorPrimary"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/nama_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="223dp"
-        android:ems="10"
+        android:layout_marginTop="5dp"
+        android:ems="15"
         android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
         android:text="Email"
-        app:layout_constraintStart_toStartOf="@+id/nama_user"
-        app:layout_constraintTop_toBottomOf="@+id/nama_user" />
+        android:textColor="@color/colorPrimary"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
+        app:layout_constraintTop_toBottomOf="@+id/noTelp" />
 
     <EditText
         android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
+        android:layout_marginTop="6dp"
+        android:ems="15"
         android:inputType="textEmailAddress"
         app:layout_constraintStart_toStartOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
@@ -73,16 +83,43 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginBottom="7dp"
         android:text="No Telepon"
-        app:layout_constraintStart_toStartOf="@+id/email"
-        app:layout_constraintTop_toBottomOf="@+id/email" />
+        android:textColor="@color/colorPrimary"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/noTelp"
+        app:layout_constraintStart_toStartOf="@+id/imageView4" />
 
     <EditText
         android:id="@+id/noTelp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
+        android:layout_marginTop="57dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginRight="45dp"
+        android:ems="12"
         android:inputType="phone"
-        app:layout_constraintStart_toStartOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView4"
+        app:layout_constraintTop_toBottomOf="@+id/nama_user" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        android:layout_marginBottom="26dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toStartOf="@+id/noTelp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView3"
+        app:srcCompat="@drawable/indo" />
+
+
 </android.support.constraint.ConstraintLayout>
