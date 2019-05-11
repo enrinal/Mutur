@@ -3,6 +3,6 @@
     <color name="colorPrimary">#68AFC9</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#707070</color>
-    <color name="scanner_line">#00ceff</color>
+    <color name="colorWhite">#ffffff</color>
 
 </resources>
