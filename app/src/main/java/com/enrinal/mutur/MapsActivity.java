@@ -163,7 +163,7 @@ public class MapsActivity extends AppCompatActivity implements NavigationView.On
 
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MapsActivity.this, ProfileViewActivity.class));
+                startActivity(new Intent(MapsActivity.this, Ride_History_iCab.class));
                 finish();
             }
         });
@@ -277,6 +277,7 @@ public class MapsActivity extends AppCompatActivity implements NavigationView.On
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
+
         if (resultCode != Activity.RESULT_OK) {
             Toast.makeText(this, "error in  scanning", Toast.LENGTH_SHORT).show();
             return;
@@ -284,8 +285,14 @@ public class MapsActivity extends AppCompatActivity implements NavigationView.On
 
         if (requestCode == BARCODE_READER_ACTIVITY_REQUEST && data != null) {
             Barcode barcode = data.getParcelableExtra(BarcodeReaderActivity.KEY_CAPTURED_BARCODE);
-            Toast.makeText(this, barcode.rawValue, Toast.LENGTH_SHORT).show();
-
+            if(barcode.rawValue.equals("Mutur 0785")){
+                startActivity(new Intent(MapsActivity.this, InRideMuturActivity.class));
+                finish();
+            }else{
+                Toast.makeText(this, "Mutur QR is Not Valid", Toast.LENGTH_SHORT).show();
+                Log.e("Click", barcode.rawValue);
+            }
+            //Toast.makeText(this, barcode.rawValue, Toast.LENGTH_SHORT).show();
         }
 
     }

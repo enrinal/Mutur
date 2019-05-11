@@ -57,6 +57,7 @@ public class BarcodeReaderActivity extends AppCompatActivity implements BarcodeR
         if (mBarcodeReaderFragment != null) {
             mBarcodeReaderFragment.pauseScanning();
         }
+
         if (barcode != null) {
             Intent intent = new Intent();
             intent.putExtra(KEY_CAPTURED_BARCODE, barcode);
