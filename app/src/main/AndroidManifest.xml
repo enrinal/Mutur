@@ -49,7 +49,7 @@
         <activity android:name=".TestActivity"></activity>
         <activity android:name=".Ride_History_iCab"></activity>
         <activity android:name=".ProfileViewActivity"></activity>
-
+        <activity android:name=".Ride_complete_rating_icab"></activity>
         <activity android:name=".SplashActivity" android:theme="@style/SplashTheme">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />

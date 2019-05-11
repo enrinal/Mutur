@@ -285,14 +285,36 @@ public class MapsActivity extends AppCompatActivity implements NavigationView.On
 
         if (requestCode == BARCODE_READER_ACTIVITY_REQUEST && data != null) {
             Barcode barcode = data.getParcelableExtra(BarcodeReaderActivity.KEY_CAPTURED_BARCODE);
-            if(barcode.rawValue.equals("Mutur 0785")){
-                startActivity(new Intent(MapsActivity.this, InRideMuturActivity.class));
-                finish();
-            }else{
-                Toast.makeText(this, "Mutur QR is Not Valid", Toast.LENGTH_SHORT).show();
-                Log.e("Click", barcode.rawValue);
-            }
-            //Toast.makeText(this, barcode.rawValue, Toast.LENGTH_SHORT).show();
+            mMutur.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    for(DataSnapshot s: dataSnapshot.getChildren()){
+                        MuturInformation mutur = s.getValue(MuturInformation.class);
+                        if(barcode.rawValue.equals(mutur.nama)){
+                            Intent intent = new Intent(MapsActivity.this,InRideMuturActivity.class);
+                            intent.putExtra("Mutur ID",barcode.rawValue);
+                            startActivity(intent);
+                            finish();
+                            break;
+                        }
+                        LatLng location = new LatLng(mutur.latitude,mutur.longitude);
+                        mMap.addMarker(new MarkerOptions().position(location).title(mutur.nama));
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+//            if(barcode.rawValue.equals("bike_18911")){
+//                //startActivity(new Intent(MapsActivity.this, InRideMuturActivity.class));
+//
+//            }else{
+//                Toast.makeText(this, barcode.rawValue, Toast.LENGTH_SHORT).show();
+//                Log.e("Click", barcode.rawValue);
+//            }
+//            //Toast.makeText(this, barcode.rawValue, Toast.LENGTH_SHORT).show();
         }
 
     }
