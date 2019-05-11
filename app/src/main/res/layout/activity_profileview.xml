@@ -5,6 +5,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:contentInsetStart="0dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <ImageView
+            android:id="@+id/navigation_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="19.2dp"
+            android:src="@drawable/ic_menu_" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="Simpan"
+            android:onClick="profile_click"
+            android:textColor="#ffffff"
+            android:textSize="17.3sp" />
+
+    </android.support.v7.widget.Toolbar>
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
