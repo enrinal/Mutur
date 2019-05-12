@@ -17,10 +17,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class ProfileViewActivity extends AppCompatActivity {
     EditText nama_user, email,noTelp;
+    private String userID;
+    private String mName;
+    private String mPhone;
+    private String mEmail;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +34,7 @@ public class ProfileViewActivity extends AppCompatActivity {
         email = findViewById(R.id.email);
         noTelp = findViewById(R.id.noTelp);
         getUserProfile();
+
     }
 
     private void getUserProfile() {
@@ -75,5 +81,17 @@ public class ProfileViewActivity extends AppCompatActivity {
     }
 
     public void simpan(View view) {
+        FirebaseUser UID = FirebaseAuth.getInstance().getCurrentUser();
+        DatabaseReference mUserDatabase = FirebaseDatabase.getInstance().getReference().child("users").child(UID.getUid());
+        mName = nama_user.getText().toString();
+        mEmail = email.getText().toString();
+        Map userInfo = new HashMap();
+        userInfo.put("name", mName);
+        userInfo.put("email", mEmail);
+        mUserDatabase.updateChildren(userInfo);
+        Toast.makeText(this, "Data Berhasil Disimpan", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(ProfileViewActivity.this, MapsActivity.class));
+        finish();
+
     }
 }

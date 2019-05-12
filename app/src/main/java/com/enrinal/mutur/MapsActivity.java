@@ -51,7 +51,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 
-public class MapsActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener, GoogleMap.OnMarkerClickListener {
+public class MapsActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,
+        OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks,
+        GoogleApiClient.OnConnectionFailedListener, LocationListener,
+        GoogleMap.OnMarkerClickListener {
 
     private GoogleMap mMap;
     private static final int BARCODE_READER_ACTIVITY_REQUEST = 1208;
@@ -66,10 +69,6 @@ public class MapsActivity extends AppCompatActivity implements NavigationView.On
     private ChildEventListener mChildEventListener;
     private DatabaseReference mMutur;
     Marker marker;
-
-
-
-
     private DrawerLayout drawer;
 
     @Override
@@ -171,18 +170,6 @@ public class MapsActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-        TextView muturpay;
-        beranda = (TextView) findViewById(R.id.muturpay);
-        beranda.setClickable(true);
-        beranda.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MapsActivity.this, ProfileViewActivity.class));
-                finish();
-            }
-        });
-
         TextView tentangkami;
         beranda = (TextView) findViewById(R.id.tentangkami);
         beranda.setClickable(true);
@@ -213,7 +200,7 @@ public class MapsActivity extends AppCompatActivity implements NavigationView.On
         mMutur.addListenerForSingleValueEvent(new ValueEventListener() {
             int height = 100;
             int width = 100;
-            BitmapDrawable bitmapdraw=(BitmapDrawable)getResources().getDrawable(R.drawable.motorbike);
+            BitmapDrawable bitmapdraw=(BitmapDrawable)getResources().getDrawable(R.drawable.map);
             Bitmap b=bitmapdraw.getBitmap();
             Bitmap smallMarker = Bitmap.createScaledBitmap(b, width, height, false);
             @Override
@@ -327,14 +314,14 @@ public class MapsActivity extends AppCompatActivity implements NavigationView.On
         mLastLocation =location;
         LatLng latLng = new LatLng(location.getLatitude(),location.getLongitude());
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-        mMap.animateCamera(CameraUpdateFactory.zoomTo(17));
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
     }
 
     @Override
     public void onConnected(@Nullable Bundle bundle) {
         mLocationRequest = new LocationRequest();
-        mLocationRequest.setInterval(10000);
-        mLocationRequest.setFastestInterval(10000);
+        mLocationRequest.setInterval(3000);
+        mLocationRequest.setFastestInterval(3000);
         mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {

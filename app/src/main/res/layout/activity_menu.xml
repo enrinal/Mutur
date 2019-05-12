@@ -38,12 +38,12 @@
         android:clickable="true">
 
         <ImageView
-            android:layout_marginLeft="34dp"
-            android:layout_marginTop="6dp"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:src="@drawable/ic_profile"
-            android:tint="#707070"/>
+            android:layout_marginLeft="34dp"
+            android:layout_marginTop="6dp"
+            android:src="@drawable/home"
+            android:tint="#707070" />
 
         <TextView
             android:id="@+id/beranda"
@@ -78,30 +78,6 @@
             android:textColor="#707070"
             android:textSize="21.7sp" />
     </LinearLayout>
-
-            <LinearLayout
-                android:layout_marginTop="38dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:clickable="true">
-                <ImageView
-                    android:layout_marginLeft="34dp"
-                    android:layout_marginTop="6dp"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/ridehistory"
-                    android:tint="#707070"/>
-
-                <TextView
-                    android:id="@+id/muturpay"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="19dp"
-                    android:text="MuturPay"
-                    android:textColor="#707070"
-                    android:textSize="21.7sp" />
-            </LinearLayout>
 
 
             <LinearLayout
