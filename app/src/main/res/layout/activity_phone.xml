@@ -10,30 +10,33 @@
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="55dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="205dp"
+        android:layout_marginBottom="38dp"
         android:gravity="center"
         android:text="Daftar menggunakan nomor telepon kamu"
         android:textColor="@color/colorAccent"
         android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/phone"
-        app:layout_constraintStart_toEndOf="@+id/imageView5"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintBottom_toTopOf="@+id/no_id"
+        app:layout_constraintStart_toStartOf="@+id/editText"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="121dp"
-        android:layout_marginBottom="65dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="90dp"
+        android:layout_marginBottom="106dp"
         android:text="MUTUR"
         android:textColor="@color/colorPrimary"
         android:textSize="40sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.48"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/editText"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
@@ -41,7 +44,7 @@
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="115dp"
         android:layout_height="40dp"
-        android:layout_marginBottom="261dp"
+        android:layout_marginBottom="250dp"
         android:background="@drawable/background_button"
         android:onClick="loginClick"
         android:outlineAmbientShadowColor="@color/colorPrimary"
@@ -49,44 +52,69 @@
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phone" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/phone"
         android:layout_width="0dp"
-        android:layout_height="45dp"
-        android:layout_marginEnd="52dp"
-        android:layout_marginRight="52dp"
-        android:layout_marginBottom="90dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="59dp"
+        android:layout_marginRight="59dp"
+        android:layout_marginBottom="71dp"
         android:ems="10"
         android:inputType="phone"
+        android:textSize="14dp"
         app:layout_constraintBottom_toTopOf="@+id/login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/no_id"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.974" />
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="52dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginLeft="44dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintBottom_toBottomOf="@+id/no_id"
-        app:layout_constraintEnd_toStartOf="@+id/no_id"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="47dp"
+        android:layout_marginLeft="47dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="339dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/phone"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/phone"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
         app:srcCompat="@drawable/indonesia" />
 
     <TextView
         android:id="@+id/no_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="103dp"
+        android:layout_marginLeft="103dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginRight="7dp"
+        android:layout_marginBottom="377dp"
         android:text="+62"
-        android:textSize="18dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/phone"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/phone"
-        app:layout_constraintStart_toEndOf="@+id/imageView5" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        android:layout_marginBottom="364dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/phone"
+        app:layout_constraintStart_toStartOf="@+id/imageView5"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 </android.support.constraint.ConstraintLayout>

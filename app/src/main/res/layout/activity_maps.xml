@@ -42,26 +42,26 @@
 
                     <ImageView
                         android:id="@+id/navigation_menu"
-                        android:layout_marginLeft="19.2dp"
+                        android:layout_marginLeft="16dp"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_menu_"/>
+                        android:layout_height="30dp"
+                        android:src="@drawable/sidebar"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Mutur"
                         android:layout_gravity="center"
-                        android:textSize="17.3sp"
+                        android:textSize="26sp"
                         android:textColor="#ffffff"/>
 
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="30dp"
                         android:layout_gravity="right"
                         android:onClick="profile_click"
                         android:src="@drawable/profile_3"
-                        android:layout_marginRight="10dp"/>
+                        android:layout_marginRight="16dp"/>
 
 
                 </android.support.v7.widget.Toolbar>

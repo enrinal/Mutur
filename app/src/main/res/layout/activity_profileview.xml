@@ -20,15 +20,15 @@
             android:id="@+id/navigation_menu"
             android:layout_width="15dp"
             android:layout_height="15dp"
-            android:layout_marginLeft="10dp"
-            android:src="@drawable/left"
-            android:onClick="back"/>
+            android:layout_marginLeft="16dp"
+            android:onClick="back"
+            android:src="@drawable/left" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
-            android:layout_marginRight="13dp"
+            android:layout_marginRight="16dp"
             android:onClick="simpan"
             android:text="Simpan"
             android:textColor="#ffffff"
@@ -53,10 +53,11 @@
         android:id="@+id/nama_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="178dp"
+        android:layout_marginTop="172dp"
         android:ems="15"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -76,52 +77,72 @@
         android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginBottom="241dp"
         android:ems="15"
         android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/noTelp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="3dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="34dp"
         android:text="No Telepon"
         android:textColor="@color/colorPrimary"
         android:textSize="15sp"
-        app:layout_constraintBottom_toTopOf="@+id/noTelp"
-        app:layout_constraintStart_toStartOf="@+id/imageView4" />
+        app:layout_constraintStart_toStartOf="@+id/editText2"
+        app:layout_constraintTop_toBottomOf="@+id/nama_user" />
 
     <EditText
         android:id="@+id/noTelp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="57dp"
-        android:layout_marginEnd="45dp"
-        android:layout_marginRight="45dp"
         android:ems="12"
         android:inputType="phone"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editText2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toBottomOf="@+id/nama_user" />
+        app:layout_constraintStart_toEndOf="@+id/textView5" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="62dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginBottom="28dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="@+id/imageView3"
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="9dp"
+        android:layout_marginRight="9dp"
+        android:text="+62"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+        app:layout_constraintEnd_toStartOf="@+id/noTelp"
+        app:layout_constraintStart_toEndOf="@+id/imageView3" />
 
     <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="0dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginRight="4dp"
-        android:layout_marginBottom="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintEnd_toStartOf="@+id/noTelp"
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/textView5"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView3"
-        app:srcCompat="@drawable/indo" />
+        app:layout_constraintTop_toTopOf="@+id/editText2"
+        app:srcCompat="@drawable/indonesia" />
 
 
 </android.support.constraint.ConstraintLayout>
