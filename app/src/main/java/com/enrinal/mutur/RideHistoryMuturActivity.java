@@ -99,7 +99,7 @@ public class RideHistoryMuturActivity extends AppCompatActivity {
                         }
                     }
                     nilai =String.valueOf(price);
-                    RidehistoryModel obj =new RidehistoryModel(R.drawable.pin_black,
+                    RidehistoryModel obj =new RidehistoryModel(R.drawable.placeholder,
                             R.drawable.rect_dotted,R.drawable.navigatiob_blue,muturid,nilai,getDate(timestamp),rideId,waktu);
                     resultsHistory.add(obj);
                     ridehistoryAdapter.notifyDataSetChanged();

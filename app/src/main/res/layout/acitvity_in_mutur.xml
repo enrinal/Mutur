@@ -93,7 +93,7 @@
                         <Button
                             android:layout_width="80dp"
                             android:layout_height="35dp"
-                            android:layout_marginLeft="140dp"
+                            android:layout_marginLeft="150dp"
                             android:layout_marginTop="17dp"
                             android:layout_marginRight="8dp"
                             android:background="@drawable/background_button"
