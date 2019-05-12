@@ -5,11 +5,23 @@ package model;
  */
 
 public class RidehistoryModel {
+    private String mutur_id,user,waktu_peminjaman;
+    private int i1,i2,i3;
+    private String price;
+    private String  timestamp;
 
-    Integer i1,i2,i3;
-    String txtmall,txthome,txtdate,txtprice;
+    public RidehistoryModel(int i1, int i2, int i3, String mutur_id, String  price, String timestamp, String user, String waktu_peminjaman){
+        this.i1=i1;
+        this.i2=i2;
+        this.i3=i3;
+        this.mutur_id= mutur_id;
+        this.price=price;
+        this.timestamp=timestamp;
+        this.user=user;
+        this.waktu_peminjaman=waktu_peminjaman;
+    }
 
-    public Integer getI1() {
+    public int getI1() {
         return i1;
     }
 
@@ -17,7 +29,7 @@ public class RidehistoryModel {
         this.i1 = i1;
     }
 
-    public Integer getI2() {
+    public int getI2() {
         return i2;
     }
 
@@ -25,7 +37,7 @@ public class RidehistoryModel {
         this.i2 = i2;
     }
 
-    public Integer getI3() {
+    public int getI3() {
         return i3;
     }
 
@@ -33,45 +45,43 @@ public class RidehistoryModel {
         this.i3 = i3;
     }
 
-    public String getTxtmall() {
-        return txtmall;
+    public String getMutur_id() {
+        return mutur_id;
     }
 
-    public void setTxtmall(String txtmall) {
-        this.txtmall = txtmall;
+    public String getPrice() {
+        return price;
     }
 
-    public String getTxthome() {
-        return txthome;
+    public String getTimestamp() {
+        return timestamp;
     }
 
-    public void setTxthome(String txthome) {
-        this.txthome = txthome;
+    public String getUser() {
+        return user;
     }
 
-    public String getTxtdate() {
-        return txtdate;
+    public String getWaktu_peminjaman() {
+        return waktu_peminjaman;
     }
 
-    public void setTxtdate(String txtdate) {
-        this.txtdate = txtdate;
+    public void setPrice(String price) {
+        this.price = price;
     }
 
-    public String getTxtprice() {
-        return txtprice;
+    public void setMutur_id(String mutur_id) {
+        this.mutur_id = mutur_id;
     }
 
-    public void setTxtprice(String txtprice) {
-        this.txtprice = txtprice;
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
     }
 
-    public RidehistoryModel(Integer i1, Integer i2, Integer i3, String txtmall, String txthome, String txtdate, String txtprice) {
-        this.i1 = i1;
-        this.i2 = i2;
-        this.i3 = i3;
-        this.txtmall = txtmall;
-        this.txthome = txthome;
-        this.txtdate = txtdate;
-        this.txtprice = txtprice;
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public void setWaktu_peminjaman(String waktu_peminjaman) {
+        this.waktu_peminjaman = waktu_peminjaman;
     }
 }

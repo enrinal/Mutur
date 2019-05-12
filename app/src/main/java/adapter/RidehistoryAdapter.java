@@ -31,7 +31,7 @@ public class RidehistoryAdapter extends RecyclerView.Adapter<RidehistoryAdapter.
     @NonNull
     @Override
     public RidehistoryAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_ride_history_icab,parent,false);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_ride_history_mutur,parent,false);
         return new ViewHolder(view);
     }
 
@@ -40,12 +40,10 @@ public class RidehistoryAdapter extends RecyclerView.Adapter<RidehistoryAdapter.
         holder.i1.setImageResource(ridehistoryModelArrayList.get(position).getI1());
         holder.i2.setImageResource(ridehistoryModelArrayList.get(position).getI2());
         holder.i3.setImageResource(ridehistoryModelArrayList.get(position).getI3());
-        holder.txtmall.setText(ridehistoryModelArrayList.get(position).getTxtmall());
-        holder.txthome.setText(ridehistoryModelArrayList.get(position).getTxthome());
-        holder.txtdate.setText(ridehistoryModelArrayList.get(position).getTxtdate());
-        holder.txtprice.setText(ridehistoryModelArrayList.get(position).getTxtprice());
-
-
+        holder.txtmall.setText(ridehistoryModelArrayList.get(position).getMutur_id());
+        holder.txthome.setText(ridehistoryModelArrayList.get(position).getWaktu_peminjaman());
+        holder.txtdate.setText(ridehistoryModelArrayList.get(position).getTimestamp());
+        holder.txtprice.setText(ridehistoryModelArrayList.get(position).getPrice());
 
     }
 
@@ -68,10 +66,6 @@ public class RidehistoryAdapter extends RecyclerView.Adapter<RidehistoryAdapter.
             txthome=itemView.findViewById(R.id.txthome);
             txtdate=itemView.findViewById(R.id.txtdate);
             txtprice=itemView.findViewById(R.id.txtprice);
-
-
-
-
 
         }
     }

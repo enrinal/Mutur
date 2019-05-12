@@ -4,6 +4,8 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -35,6 +37,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -163,7 +166,7 @@ public class MapsActivity extends AppCompatActivity implements NavigationView.On
 
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MapsActivity.this, Ride_History_iCab.class));
+                startActivity(new Intent(MapsActivity.this, RideHistoryMuturActivity.class));
                 finish();
             }
         });
@@ -208,12 +211,20 @@ public class MapsActivity extends AppCompatActivity implements NavigationView.On
         //Mutur Lokasi
         mMap.setOnMarkerClickListener(this);
         mMutur.addListenerForSingleValueEvent(new ValueEventListener() {
+            int height = 100;
+            int width = 100;
+            BitmapDrawable bitmapdraw=(BitmapDrawable)getResources().getDrawable(R.drawable.motorbike);
+            Bitmap b=bitmapdraw.getBitmap();
+            Bitmap smallMarker = Bitmap.createScaledBitmap(b, width, height, false);
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for(DataSnapshot s: dataSnapshot.getChildren()){
                     MuturInformation mutur = s.getValue(MuturInformation.class);
                     LatLng location = new LatLng(mutur.latitude,mutur.longitude);
-                    mMap.addMarker(new MarkerOptions().position(location).title(mutur.nama));
+                    mMap.addMarker(new MarkerOptions()
+                            .position(location)
+                            .title(mutur.nama)
+                            .icon(BitmapDescriptorFactory.fromBitmap(smallMarker)));
                 }
             }
 
@@ -307,14 +318,6 @@ public class MapsActivity extends AppCompatActivity implements NavigationView.On
 
                 }
             });
-//            if(barcode.rawValue.equals("bike_18911")){
-//                //startActivity(new Intent(MapsActivity.this, InRideMuturActivity.class));
-//
-//            }else{
-//                Toast.makeText(this, barcode.rawValue, Toast.LENGTH_SHORT).show();
-//                Log.e("Click", barcode.rawValue);
-//            }
-//            //Toast.makeText(this, barcode.rawValue, Toast.LENGTH_SHORT).show();
         }
 
     }

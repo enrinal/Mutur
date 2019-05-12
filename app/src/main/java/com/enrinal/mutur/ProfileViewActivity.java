@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -65,5 +66,14 @@ public class ProfileViewActivity extends AppCompatActivity {
         super.onBackPressed();
         startActivity(new Intent(ProfileViewActivity.this, MapsActivity.class));
         finish();
+    }
+
+    public void back(View view) {
+        super.onBackPressed();
+        startActivity(new Intent(ProfileViewActivity.this, MapsActivity.class));
+        finish();
+    }
+
+    public void simpan(View view) {
     }
 }

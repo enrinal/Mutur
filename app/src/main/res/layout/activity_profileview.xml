@@ -21,14 +21,15 @@
             android:layout_width="15dp"
             android:layout_height="15dp"
             android:layout_marginLeft="10dp"
-            android:src="@drawable/left" />
+            android:src="@drawable/left"
+            android:onClick="back"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:layout_marginRight="13dp"
-            android:onClick="profile_click"
+            android:onClick="simpan"
             android:text="Simpan"
             android:textColor="#ffffff"
             android:textSize="15sp" />

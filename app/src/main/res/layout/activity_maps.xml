@@ -60,7 +60,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
                         android:onClick="profile_click"
-                        android:src="@drawable/ic_notifications_none_black_24dp"
+                        android:src="@drawable/profile_3"
                         android:layout_marginRight="10dp"/>
 
 

@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:layout_marginBottom="27.7dp"
-    tools:context="com.enrinal.mutur.Ride_complete_rating_icab">
+    tools:context="com.enrinal.mutur.RideCompleteMuturActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,6 +26,7 @@
                 android:layout_marginLeft="19.2dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="back"
                 android:src="@drawable/ic_left_arrow"/>
 
             <TextView
@@ -36,12 +37,6 @@
                 android:textSize="17.3sp"
                 android:textColor="#323643"/>
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:src="@drawable/ic_notifications_none_black_24dp"
-                android:layout_marginRight="10dp"/>
         </android.support.v7.widget.Toolbar>
         <LinearLayout
             android:layout_marginTop="51.3dp"
@@ -64,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="15.4sp"
                 android:textColor="#606470"
-                android:text="Rate your last ride with Steve Rogers!"/>
+                android:text="Thanks For Using Mutur!"/>
 
 
 
@@ -78,6 +73,13 @@
                 android:textSize="17.3sp"/>
 
 
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/motorbike" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -89,11 +91,10 @@
                 android:layout_marginRight="28.9dp"
                 android:padding="12dp">
 
-                <ImageView
-                    android:layout_marginTop="8dp"
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/mail"/>
+                    android:text="ETA"/>
 
                 <TextView
                     android:id="@+id/eta"
@@ -117,11 +118,10 @@
                 android:layout_marginRight="28.9dp"
                 android:padding="12dp">
 
-                <ImageView
-                    android:layout_marginTop="8dp"
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/mail"/>
+                    android:text="Rp"/>
 
                 <TextView
                     android:id="@+id/price"
@@ -145,6 +145,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Tutup"
+                android:onClick="closeView"
                 android:textAllCaps="false"
                 android:background="@drawable/rect_blue"
                 android:textColor="#fbfbfb"
