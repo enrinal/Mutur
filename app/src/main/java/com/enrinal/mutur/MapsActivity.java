@@ -96,14 +96,6 @@ public class MapsActivity extends AppCompatActivity implements NavigationView.On
         TextView titleView = (TextView) findViewById(R.id.toolbar_title);
         titleView.setText("Scan to Ride");
         Button backButton = (Button) findViewById(R.id.toolbar_button);
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MapsActivity.this, TestActivity.class));
-                finish();
-            }
-        });
-
         ChildEventListener mChildEventListener;
         mMutur= FirebaseDatabase.getInstance().getReference("muturbike");
         mMutur.push().setValue(marker);

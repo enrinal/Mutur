@@ -84,7 +84,7 @@
                 android:layout_marginRight="28.9dp"
                 android:padding="12dp">
 
-                <<ImageView
+                <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:src="@drawable/jambiru"/>

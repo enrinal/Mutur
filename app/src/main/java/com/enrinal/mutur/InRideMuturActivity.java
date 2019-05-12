@@ -71,7 +71,7 @@ public class InRideMuturActivity extends AppCompatActivity implements OnMapReady
         muturID =getIntent().getExtras().getString("Mutur ID");
         nama_mutur= findViewById(R.id.nama_mutur);
         nama_mutur.setText(muturID);
-        setNotifikasi();
+        setNotifikasi("Enjoy your ride and drive carefully");
     }
 
     @Override
@@ -87,6 +87,7 @@ public class InRideMuturActivity extends AppCompatActivity implements OnMapReady
         intent.putExtra("muturid",muturID);
         startActivity(intent);
         Log.e("Time Wat :", String.valueOf(timerTime));
+        setNotifikasi("Thank you for using Mutur");
     }
 
     @Override
@@ -162,15 +163,15 @@ public class InRideMuturActivity extends AppCompatActivity implements OnMapReady
         }
     }
 
-    public void setNotifikasi() {
+    public void setNotifikasi(String s) {
         String id = null;
         NotificationManager notificationManager = null;
         int importance = 0;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-            id = "id_product";
+            id = "id_ride";
             // The user-visible name of the channel.
-            CharSequence name = "Product";
+            CharSequence name = "Mutur";
             // The user-visible description of the channel.
             String description = "Notifications regarding our products";
             importance = NotificationManager.IMPORTANCE_MAX;
@@ -194,7 +195,7 @@ public class InRideMuturActivity extends AppCompatActivity implements OnMapReady
                 .setAutoCancel(true).setContentIntent(pendingIntent)
                 .setNumber(1)
                 .setColor(255)
-                .setContentText("Enjoy Your Ride")
+                .setContentText(s)
                 .setWhen(System.currentTimeMillis());
         notificationManager.notify(1, notificationBuilder.build());
     }
