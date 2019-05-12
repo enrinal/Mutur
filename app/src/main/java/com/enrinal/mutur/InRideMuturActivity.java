@@ -1,15 +1,21 @@
 package com.enrinal.mutur;
 
 import android.Manifest;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.location.Location;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -45,6 +51,8 @@ public class InRideMuturActivity extends AppCompatActivity implements OnMapReady
     private String muturID;
     private TextView nama_mutur;
     private long timerTime = Long.MIN_VALUE;
+    public static final int notifikasi = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +71,7 @@ public class InRideMuturActivity extends AppCompatActivity implements OnMapReady
         muturID =getIntent().getExtras().getString("Mutur ID");
         nama_mutur= findViewById(R.id.nama_mutur);
         nama_mutur.setText(muturID);
+        setNotifikasi();
     }
 
     @Override
@@ -152,4 +161,42 @@ public class InRideMuturActivity extends AppCompatActivity implements OnMapReady
             }
         }
     }
+
+    public void setNotifikasi() {
+        String id = null;
+        NotificationManager notificationManager = null;
+        int importance = 0;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+            id = "id_product";
+            // The user-visible name of the channel.
+            CharSequence name = "Product";
+            // The user-visible description of the channel.
+            String description = "Notifications regarding our products";
+            importance = NotificationManager.IMPORTANCE_MAX;
+            NotificationChannel mChannel = new NotificationChannel(id, name, importance);
+            // Configure the notification channel.
+            mChannel.setDescription(description);
+            mChannel.enableLights(true);
+            // Sets the notification light color for notifications posted to this
+            // channel, if the device supports this feature.
+            mChannel.setLightColor(Color.RED);
+            notificationManager.createNotificationChannel(mChannel);
+        }
+
+        Intent intent1 = new Intent(getApplicationContext(), InRideMuturActivity.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(), 123, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
+        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(getApplicationContext(), "id_product")
+                .setSmallIcon(R.drawable.motorbike) //your app icon
+                .setBadgeIconType(R.drawable.motorbike) //your app icon
+                .setChannelId(id)
+                .setContentTitle("Mutur")
+                .setAutoCancel(true).setContentIntent(pendingIntent)
+                .setNumber(1)
+                .setColor(255)
+                .setContentText("Enjoy Your Ride")
+                .setWhen(System.currentTimeMillis());
+        notificationManager.notify(1, notificationBuilder.build());
+    }
 }
+
