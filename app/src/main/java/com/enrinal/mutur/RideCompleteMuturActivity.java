@@ -19,6 +19,7 @@ public class RideCompleteMuturActivity extends AppCompatActivity {
     private long etaa;
     private TextView eTime;
     private TextView price;
+    private TextView mutur_nama;
     private String muturId;
     private long tarif;
     private String hms;
@@ -46,6 +47,8 @@ public class RideCompleteMuturActivity extends AppCompatActivity {
         Log.e("eta", hms);
         muturId = getIntent().getExtras().getString("muturid",null);
         recordMutur();
+        mutur_nama=findViewById(R.id.mutur_nama);
+        mutur_nama.setText(muturId);
     }
 
     public void closeView(View view) {

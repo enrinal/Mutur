@@ -64,6 +64,7 @@
 
 
             <TextView
+                android:id="@+id/mutur_nama"
                 android:layout_marginTop="19.3dp"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
