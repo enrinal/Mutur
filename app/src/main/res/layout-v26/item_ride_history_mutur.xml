@@ -36,7 +36,7 @@
                     android:layout_marginLeft="14.4dp"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:src="@drawable/pin_black"/>
+                    android:src="@drawable/placeholder"/>
 
                 <ImageView
                     android:id="@+id/i2"
