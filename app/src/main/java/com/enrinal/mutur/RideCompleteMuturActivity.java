@@ -32,7 +32,6 @@ public class RideCompleteMuturActivity extends AppCompatActivity {
         hms = String.format("%02d:%02d:%02d", TimeUnit.MILLISECONDS.toHours(etaa),
                 TimeUnit.MILLISECONDS.toMinutes(etaa) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(etaa)),
                 TimeUnit.MILLISECONDS.toSeconds(etaa) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(etaa)));
-//        eta = getIntent().getExtras().getLong("eta");
         price = findViewById(R.id.price);
         if(etaa <= 1800000){
             tarif = 20000;

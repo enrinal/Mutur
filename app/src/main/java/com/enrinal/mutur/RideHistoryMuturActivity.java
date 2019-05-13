@@ -30,13 +30,7 @@ public class RideHistoryMuturActivity extends AppCompatActivity {
     private RecyclerView recyclerview;
     private ArrayList<RidehistoryModel> ridehistoryModelArrayList;
     private String userID;
-    Integer i1[]={R.drawable.pin_black, R.drawable.pin_black, R.drawable.pin_black, R.drawable.pin_black, R.drawable.pin_black};
-    Integer i2[]={R.drawable.rect_dotted, R.drawable.rect_dotted, R.drawable.rect_dotted, R.drawable.rect_dotted, R.drawable.rect_dotted};
-    Integer i3[]={R.drawable.navigatiob_blue, R.drawable.navigatiob_blue, R.drawable.navigatiob_blue, R.drawable.navigatiob_blue, R.drawable.navigatiob_blue};
-    String txtmall[]={"Phoenix Market City","Phoenix Market City","Phoenix Market City","Phoenix Market City","Phoenix Market City"};
-    String txthome[]={"Home","Home","Home","Home","Home"};
-    String txtdate[]={"01 May 2018","01 May 2018","01 May 2018","01 May 2018","01 May 2018"};
-    String txtprice[]={"$2.94","$2.94","$2.94","$2.94","$2.94"};
+    private String harga;
 
 
     @Override
@@ -99,8 +93,9 @@ public class RideHistoryMuturActivity extends AppCompatActivity {
                         }
                     }
                     nilai =String.valueOf(price);
+                    harga = "Rp. "+nilai;
                     RidehistoryModel obj =new RidehistoryModel(R.drawable.placeholder,
-                            R.drawable.rect_dotted,R.drawable.navigatiob_blue,muturid,nilai,getDate(timestamp),rideId,waktu);
+                            R.drawable.rect_dotted,R.drawable.navigatiob_blue,muturid,harga,getDate(timestamp),rideId,waktu);
                     resultsHistory.add(obj);
                     ridehistoryAdapter.notifyDataSetChanged();
                 }

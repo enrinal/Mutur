@@ -169,7 +169,7 @@ public class MapsActivity extends AppCompatActivity implements NavigationView.On
 
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MapsActivity.this, ProfileViewActivity.class));
+                startActivity(new Intent(MapsActivity.this, FaqActivity.class));
                 finish();
             }
         });

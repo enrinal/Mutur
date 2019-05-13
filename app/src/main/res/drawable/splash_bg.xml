@@ -5,7 +5,7 @@
 
     <item android:gravity="center" android:width="100dp" android:height="100dp">
         <bitmap
-            android:gravity="fill_horizontal|fill_vertical"
+            android:gravity="center"
             android:src="@drawable/logo_new"/>
     </item>
 

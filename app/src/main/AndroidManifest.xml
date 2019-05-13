@@ -49,6 +49,7 @@
         <activity android:name=".RideHistoryMuturActivity"></activity>
         <activity android:name=".ProfileViewActivity"></activity>
         <activity android:name=".RideCompleteMuturActivity"></activity>
+        <activity android:name=".FaqActivity"></activity>
         <activity android:name=".SplashActivity" android:theme="@style/SplashTheme">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
