@@ -43,6 +43,8 @@ public class PhoneActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
 
         auth = FirebaseAuth.getInstance();
+        /*this triggered the observer when users were signed in, signed out, or when the user's ID
+        token changed in situations such as token expiry or password change.*/
         stateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
